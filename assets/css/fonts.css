@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "Open Sans";
+    src:
+        url("../fonts/Opensans/opensans.woff2") format("woff2"),
+        url("../fonts/Opensans/opensans.woff") format("woff"),
+        url("../fonts/Opensans/opensans.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src:
+        url("../fonts/Raleway/raleway.woff2") format("woff2"),
+        url("../fonts/Raleway/raleway.woff") format("woff"),
+        url("../fonts/Raleway/raleway.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src:
+        url("../fonts/Raleway/ralewayItalic.woff2") format("woff2"),
+        url("../fonts/Raleway/ralewayItalic.woff") format("woff"),
+        url("../fonts/Raleway/ralewayItalic.ttf") format("truetype");
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Definición de la fuente Poppins - Peso normal (400) */
+@font-face {
+    font-family: "Poppins";
+    src:
+        url("../fonts/Poppins/Poppins-Regular.woff2") format("woff2"),
+        url("../fonts/Poppins/Poppins-Regular.woff") format("woff"),
+        url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    /* Peso normal */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Definición de la fuente Poppins - Peso semi-negrita (600) */
+@font-face {
+    font-family: "Poppins";
+    src:
+        url("../fonts/Poppins/Poppins-Semibold.woff2") format("woff2"),
+        url("../fonts/Poppins/Poppins-Semibold.woff") format("woff"),
+        url("../fonts/Poppins/Poppins-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    /* Peso semi-negrita */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Definición de la fuente Poppins - Peso negrita (700) */
+@font-face {
+    font-family: "Poppins";
+    src:
+        url("../fonts/Poppins/Poppins-Bold.woff2") format("woff2"),
+        url("../fonts/Poppins/Poppins-Bold.woff") format("woff"),
+        url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    /* Peso negrita */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Definición de la fuente Poppins - Peso normal itálico (400) */
+@font-face {
+    font-family: "Poppins";
+    src:
+        url("../fonts/Poppins/Poppins-Italic.woff2") format("woff2"),
+        url("../fonts/Poppins/Poppins-Italic.woff") format("woff"),
+        url("../fonts/Poppins/Poppins-Italic.ttf") format("truetype");
+    font-weight: 400;
+    /* Peso normal */
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Definición de la fuente Poppins - Peso negrita itálico (700) */
+@font-face {
+    font-family: "Poppins";
+    src:
+        url("../fonts/Poppins/Poppins-BoldItalic.woff2") format("woff2"),
+        url("../fonts/Poppins/Poppins-BoldItalic.woff") format("woff"),
+        url("../fonts/Poppins/Poppins-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    /* Peso negrita */
+    font-style: italic;
+    font-display: swap;
+}
