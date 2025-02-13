@@ -44,9 +44,9 @@
 @font-face {
     font-family: "Poppins";
     src:
-        url("../fonts/Poppins/Poppins-Semibold.woff2") format("woff2"),
-        url("../fonts/Poppins/Poppins-Semibold.woff") format("woff"),
-        url("../fonts/Poppins/Poppins-Semibold.ttf") format("truetype");
+        url("../fonts/Poppins/Poppins-SemiBold.woff2") format("woff2"),
+        url("../fonts/Poppins/Poppins-SemiBold.woff") format("woff"),
+        url("../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
     font-weight: 600;
     /* Peso semi-negrita */
     font-style: normal;
