@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Morales - Desarrollador Web</title>
+    <meta content="Desarrollador Full Stack especializado en Angular" name="description">
+    <meta
+        content="portafolio, portfolio, js, java, python, angular, ionic, desarrollador web, Full Stack, Sergio Morales"
+        name="keywords">
+    <meta name="author" content="Sergio Morales">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sergio Morales - Web Developer">
+    <meta property="og:description"
+        content="Currículum de un desarrollador web con más de un año de experiencia en las tecnologías web más utilizadas.">
+    <meta property="og:image" content="/assets/img/opengraph/previsualizacion.png">
+    <meta property="og:url" content="https://sergiomorales.dev">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            /* Color principal más vibrante */
+            --secondary-color: #10b981;
+            /* Verde menta más moderno */
+            --accent-color: #f43f5e;
+            /* Color de acento más vibrante */
+            --dark-color: #1e293b;
+            /* Fondo oscuro más sofisticado */
+            --light-color: #f8fafc;
+            /* Color claro refinado */
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a5b4fc 100%);
+            --gradient-secondary: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header y Navegación con efecto de vidrio */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 1.5rem 0;
+        }
+
+        .header-scrolled {
+            background-color: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-color);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section mejorado con animaciones */
+        .hero {
+            height: 100vh;
+            background: var(--dark-color);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Efecto de partículas de fondo */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 90% 10%, var(--accent-color) 0%, transparent 25%),
+                radial-gradient(circle at 10% 90%, var(--primary-color) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, var(--secondary-color) 0%, transparent 10%);
+            opacity: 0.1;
+            animation: backgroundPulse 15s infinite alternate;
+        }
+
+        @keyframes backgroundPulse {
+            0% {
+                opacity: 0.05;
+            }
+
+            50% {
+                opacity: 0.1;
+            }
+
+            100% {
+                opacity: 0.15;
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .hero-title span {
+            display: block;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        /* Efecto de typewriter para el subtítulo */
+        .hero-title span::after {
+            content: "|";
+            position: absolute;
+            right: -15px;
+            color: var(--secondary-color);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            opacity: 0.9;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: white;
+        }
+
+        /* Efecto de botón mejorado */
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: right;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+            margin-left: auto;
+        }
+
+        /* Modelo 3D o imagen con efectos */
+        .main-img {
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+            animation: floatMain 6s infinite ease-in-out;
+        }
+
+        @keyframes floatMain {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        .tech-icons {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            animation: float 3s infinite ease-in-out;
+            z-index: 3;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .tech-icons:hover {
+            transform: scale(1.2) translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-1 {
+            top: 10%;
+            left: 0;
+            animation-delay: 0s;
+        }
+
+        .tech-2 {
+            bottom: 20%;
+            left: 10%;
+            animation-delay: 0.5s;
+        }
+
+        .tech-3 {
+            top: 20%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .tech-4 {
+            bottom: 10%;
+            right: 0;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Sección de Proyectos con diseño moderno de tarjetas */
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 30%;
+            height: 4px;
+            background: var(--gradient-primary);
+            bottom: -10px;
+            left: 35%;
+        }
+
+        /* Layout mejorado con tarjetas 3D */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 1;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .project-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .project-title::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .project-card:hover .project-title::after {
+            width: 100%;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background: var(--light-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-link::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -3px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            width: 100%;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Sección de Experiencia con línea de tiempo interactiva */
+        .experience-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: var(--gradient-primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 5px solid var(--primary-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::after {
+            background-color: var(--primary-color);
+            box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.5);
+            transform: scale(1.2);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -17px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -17px;
+        }
+
+        .timeline-content {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-content:hover::before {
+            transform: scaleY(1);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            color: white;
+            background: var(--gradient-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .timeline-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .timeline-company {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            color: #666;
+        }
+
+        /* Sección de Habilidades con tarjetas modernas */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .skills-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .skills-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .skills-header {
+            background: var(--gradient-primary);
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-header::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: -75px;
+            right: -75px;
+        }
+
+        .skills-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .skills-list {
+            padding: 2rem;
+            list-style: none;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateX(10px);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-color);
+            border-radius: 12px;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: rotate(10deg);
+        }
+
+        .skill-name {
+            flex-grow: 1;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+
+        /* Estrellas en lugar de porcentajes para habilidades */
+        .skill-stars {
+            display: flex;
+            gap: 3px;
+        }
+
+        .star {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Sección de Contacto con diseño moderno */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            position: relative;
+        }
+
+        .contact-heading {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 70px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transition: width 0.3s ease;
+        }
+
+        .contact-info:hover .contact-heading::after {
+            width: 100%;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-color);
+            border-radius: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: rotate(10deg);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .contact-text {
+            font-size: 1.2rem;
+        }
+
+        .contact-text span {
+            display: block;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .social-link {
+            width: 150px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-10px) rotate(10deg);
+            box-shadow: 0 15px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.05;
+            top: -100px;
+            right: -100px;
+            transition: all 0.5s ease;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-form:hover::before {
+            transform: scale(1.5);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--light-color);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.1);
+            transform: translateY(-5px);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer con diseño moderno */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 90% 10%, var(--primary-color) 0%, transparent 25%),
+                radial-gradient(circle at 10% 90%, var(--secondary-color) 0%, transparent 25%);
+            opacity: 0.05;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--secondary-color);
+        }
+
+        .footer-text {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .copyright {
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+
+        /* Animaciones mejoradas */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Efectos de scroll mejorados */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Soporte para media queries */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero-image-wrapper {
+                margin: 0 auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .burger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: rgba(30, 41, 59, 0.95);
+                backdrop-filter: blur(10px);
+                transition: all 0.5s ease;
+                z-index: 1000;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .burger.active div:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .burger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger.active div:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .experience-timeline::before {
+                display: none;
+            }
+
+            .timeline-item::after {
+                display: none;
+            }
+
+
+            .timeline-item {
+                width: 100%;
+                padding: 20px 0px;
+
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 27px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-card {
+                width: 100%;
+                margin: 0;
+            }
+
+            .project-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 5rem 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .project-title {
+                font-size: 1.5rem;
+            }
+
+            .timeline-title {
+                font-size: 1.5rem;
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .projects-grid {
+                gap: 1.5rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-tags {
+                gap: 0.5rem;
+            }
+
+            .contact-text {
+                font-size: 1rem;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 1.2rem;
+            }
+
+            .social-link {
+                width: 150px;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+        }
+
+        /* Estilos base para hero-description */
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            opacity: 0.9;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Ajuste para pantallas grandes */
+        @media (min-width: 1025px) {
+            .hero-description {
+                margin-left: 0;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .hero-content {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header y Navegación -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Portfolio<span>.dev</span></a>
+                <nav>
+                    <div class="nav-links" id="navLinks">
+                        <a href="#home">Inicio</a>
+                        <a href="#projects">Proyectos</a>
+                        <a href="#experience">Experiencia</a>
+                        <a href="#education">Educación</a>
+                        <a href="#contact">Contacto</a>
+                    </div>
+                    <div class="burger" id="burger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content fade-in">
+                    <h1 class="hero-title">
+                        Hola, soy <span>Sergio Morales</span>
+                    </h1>
+                    <p class="hero-description">
+                        Desarrollador web Full Stack apasionado por crear experiencias digitales excepcionales.
+                        Especializado en Angular, Node.js y diseño UI/UX orientado a resultados.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contact" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+                <!-- <div class="hero-image fade-in">
+                    <div class="hero-image-wrapper">
+                        <img src="https://placehold.in/500x600.png/dark" alt="Sergio Morales" class="main-img" width="100%">
+                        <div class="tech-icons tech-1">JS</div>
+                        <div class="tech-icons tech-2">React</div>
+                        <div class="tech-icons tech-3">Node</div>
+                        <div class="tech-icons tech-4">UI/UX</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Mis Proyectos</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <!-- <div class="project-card reveal">
+                    <img src="https://placehold.in/600x340.png/dark" alt="Proyecto 1" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Moderno</h3>
+                        <p class="project-description">
+                            Plataforma de comercio electrónico completa con carrito de compras, pasarela de pagos y
+                            panel de administración.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Ver Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="project-card reveal">
+                    <picture>
+                        <source srcset="images/projects/wordle/wordle.avif" type="image/avif">
+                        <source srcset="images/projects/wordle/wordle.webp" type="image/webp">
+                        <img src="images/projects/wordle/wordle.png" alt="Wordle" class="project-img">
+                    </picture>
+                    <div class="project-content">
+                        <h3 class="project-title">Wordle</h3>
+                        <p class="project-description">
+                            Juego de adivinanza de palabras basado en el famoso Wordle. Adivina la palabra del día en
+                            seis intentos. Compatible con español, inglés y euskera, permitiendo a los jugadores elegir
+                            el idioma en el que desean jugar.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Tailwind CSS</span>
+                            <span class="project-tag">Github Actions</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://wordle.sergiomorales.dev/" target="_blank" class="project-link">Ver
+                                Demo</a>
+                            <a href="https://github.com/Sergitxin22/wordle" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card reveal">
+                    <picture>
+                        <source srcset="images/projects/qr-component/qr.avif" type="image/avif">
+                        <source srcset="images/projects/qr-component/qr.webp" type="image/webp">
+                        <img src="images/projects/qr-component/qr.png" alt="Proyecto Componente QR" class="project-img">
+                    </picture>
+                    <div class="project-content">
+                        <h3 class="project-title">QR code component</h3>
+                        <p class="project-description">
+                            Solución QR code component - Frontend Mentor.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://sergitxin22.github.io/qr-code-component/" target="_blank"
+                                class="project-link">Ver
+                                Demo</a>
+                            <a href="https://github.com/Sergitxin22/qr-code-component" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card reveal">
+                    <picture>
+                        <source srcset="images/projects/pokemon/pokemon.avif" type="image/avif">
+                        <source srcset="images/projects/pokemon/pokemon.webp" type="image/webp">
+                        <img src="images/projects/pokemon/pokemon.png" alt="Proyecto PokeApi" class="project-img">
+                    </picture>
+                    <div class="project-content">
+                        <h3 class="project-title">Componente PokeAPI</h3>
+                        <p class="project-description">
+                            Componente que muestra un Pokemon aleatorio con su imagen y algunas estadísticas utilizando
+                            la PokeAPI.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">RESTful API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://pokemon.sergiomorales.dev/" target="_blank" class="project-link">Ver
+                                Demo</a>
+                            <!-- <a href="https://github.com/Sergitxin22/qr-code-component" target="_blank"
+                                class="project-link">GitHub</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Experiencia -->
+    <section class="section section-dark" id="experience">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Mi Experiencia</h2>
+            </div>
+            <div class="experience-timeline">
+                <!-- Experiencia 1 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2023 (1 año)</span>
+                        <h3 class="timeline-title">Desarrollador Full Stack</h3>
+                        <h4 class="timeline-company">LKS NEXT</h4>
+                        <p class="timeline-description">
+                            Durante mi tiempo en LKS NEXT, desarrollé diversas plataformas internas para varias empresas
+                            utilizando Angular y Entity Framework. Además, configuré múltiples escáneres Zebra y brindé
+                            soporte técnico a clientes, asegurando la integración y el óptimo funcionamiento de las
+                            soluciones implementadas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experiencia 2 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mar 2022 - Jun 2022 (3 meses)</span>
+                        <h3 class="timeline-title">Desarrollador de Aplicaciones Web</h3>
+                        <h4 class="timeline-company">LKS NEXT</h4>
+                        <p class="timeline-description">
+                            Durante mi etapa en LKS NEXT, desarrollé una aplicación interna multiplataformas utilizando
+                            Ionic. Este proyecto me permitió integrar diversas funcionalidades en un entorno unificado,
+                            mejorando la experiencia de usuario y asegurando la escalabilidad y eficiencia del sistema.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Educación -->
+    <section class="section section-light" id="education">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Educación</h2>
+            </div>
+            <div class="experience-timeline">
+                <!-- Educación 1 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Presente</span>
+                        <h3 class="timeline-title">Grado en Ingeniería Informática</h3>
+                        <h4 class="timeline-company">Universidad de Deusto</h4>
+                        <p class="timeline-description">
+                            Durante mi formación en el Grado en Ingeniería Informática, he adquirido una sólida base en
+                            programación, algoritmos y estructuras de datos. Además, he participado en diversos
+                            proyectos académicos que me han permitido aplicar conceptos teóricos a problemas prácticos,
+                            fomentando la innovación y el trabajo colaborativo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Educación 2 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3 class="timeline-title">Grado Superior en Desarrollo De Aplicaciones Web</h3>
+                        <h4 class="timeline-company">CPES Colegio Zabalburu Ikastetxea</h4>
+                        <p class="timeline-description">
+                            Durante el Grado Superior en Desarrollo De Aplicaciones Web, adquirí competencias en el
+                            diseño, desarrollo y despliegue de soluciones digitales. Participé en proyectos prácticos
+                            integrando tanto el desarrollo frontend como backend, utilizando tecnologías modernas y
+                            metodologías ágiles para crear aplicaciones web eficientes y escalables.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Contacto</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info reveal">
+                    <h3 class="contact-heading">¡Hablemos de tu proyecto!</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                sergiomoralescobo03@gmail.com
+                                <span>Respuesta en 24-48 horas</span>
+                            </div>
+                        </li>
+                        <!-- <li class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                +34 123 456 789
+                                <span>Lunes a Viernes, 9AM-6PM</span>
+                            </div>
+                        </li> -->
+                        <li class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                Bilbao, España
+                                <span>Disponible para trabajo remoto</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/sergiomoralescobo" target="_blank"
+                            class="social-link">LinkedIn</a>
+                        <a href="https://github.com/Sergitxin22" target="_blank" class="social-link">GitHub</a>
+                        <!-- <a href="#" class="social-link">Tw</a>
+                        <a href="#" class="social-link">Ig</a> -->
+                    </div>
+                </div>
+                <div class="contact-form reveal">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Asunto</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SergioMorales<span>.dev</span></div>
+                <p class="footer-text">
+                    Creando experiencias web excepcionales con pasión y creatividad.
+                    Siempre aprendiendo, siempre innovando.
+                </p>
+                <div class="footer-links">
+                    <a href="#home">Inicio</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#experience">Experiencia</a>
+                    <a href="#education">Educación</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+                <p class="copyright">
+                    © 2025 Sergio Morales. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts para interactividad -->
+    <script>
+        // Animación para elementos al hacer scroll
+        window.addEventListener('scroll', function () {
+            // Header efecto al hacer scroll
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+
+            // Animación de elementos al revelar
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        });
+
+        // Menú hamburguesa para móviles
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        // Cerrar el menú al hacer clic en un enlace (móvil)
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+
+        // Formulario de contacto con mailto
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Obtener datos del formulario
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const subject = document.getElementById('subject').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                // Validación básica
+                if (!name || !email || !subject || !message) {
+                    alert('Por favor, completa todos los campos del formulario');
+                    return;
+                }
+
+                // Crear el mailto con los datos del formulario
+                const mailtoRecipient = 'sergiomoralescobo03@gmail.com';
+                const mailtoSubject = encodeURIComponent(`[Desde Portfolio]: ${subject}`);
+                const mailtoBody = encodeURIComponent(
+                    `Nombre: ${name}\n` +
+                    `Email: ${email}\n\n` +
+                    `Mensaje:\n${message}`
+                );
+
+                // Crear la URL del mailto
+                const mailtoUrl = `mailto:${mailtoRecipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+                // Abrir el cliente de correo del usuario
+                window.location.href = mailtoUrl;
+
+                // Mostrar mensaje de confirmación
+                setTimeout(() => {
+                    alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar el mensaje.');
+                    contactForm.reset();
+                }, 100);
+            });
+        }
+    </script>
+</body>
+
+</html>
