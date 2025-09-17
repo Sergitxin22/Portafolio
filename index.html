@@ -485,9 +485,15 @@
 
         .project-img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
             transition: transform 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .project-img {
+                height: 250px;
+            }
         }
 
         .project-card:hover .project-img {
@@ -582,7 +588,7 @@
         }
 
         .project-link:hover {
-            color: var(--secondary-color);
+            color: var(--dark-color);
         }
 
         /* Sección de Experiencia con línea de tiempo interactiva */
@@ -1203,7 +1209,7 @@
             }
 
             .projects-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
                 gap: 2rem;
             }
 
@@ -1214,7 +1220,8 @@
 
             .project-img {
                 width: 100%;
-                height: auto;
+                height: 250px;
+                object-fit: cover;
             }
         }
 
@@ -1334,6 +1341,8 @@
                         <a href="#projects">Proyectos</a>
                         <a href="#experience">Experiencia</a>
                         <a href="#education">Educación</a>
+                        <a href="#awards">Premios</a>
+                        <a href="#volunteer">Voluntariado</a>
                         <a href="#contact">Contacto</a>
                     </div>
                     <div class="burger" id="burger">
@@ -1567,6 +1576,137 @@
         </div>
     </section>
 
+    <!-- Sección de Premios -->
+    <section class="section section-dark" id="awards">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Premios y Reconocimientos</h2>
+            </div>
+            <div class="projects-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- HackUPC 2025 -->
+                <div class="project-card reveal">
+                    <picture>
+                        <source srcset="images/premios/premio2.avif" type="image/avif">
+                        <source srcset="images/premios/premio2.webp" type="image/webp">
+                        <img src="images/premios/premio2.jpg" alt="HackUPC 2025 - Tercer Premio" class="project-img">
+                    </picture>
+                    <!-- <img src="images/premios/premio2.jpg" alt="HackUPC 2025 - Tercer Premio" class="project-img"> -->
+                    <div class="project-content">
+                        <h3 class="project-title">🥉 HackUPC 2025 - Rack Attack</h3>
+                        <p class="project-description">
+                            Tercer premio en el reto Siemens Energy - Data Center Designer. Desarrollamos una solución
+                            sostenible e inteligente
+                            para optimizar la eficiencia energética y el layout de centros de datos en 36 horas. HackUPC
+                            2025 reunió a ~700 hackers
+                            en el Campus Norte de la UPC.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">Three.js</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Gemini LLM</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://devpost.com/software/rack-attack" target="_blank" class="project-link">Ver
+                                en Devpost</a>
+                            <a href="https://github.com/hiatus770/hackupc2025" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hack & Disrupt 2022 -->
+                <div class="project-card reveal">
+                    <picture>
+                        <source srcset="images/premios/premio1.avif" type="image/avif">
+                        <source srcset="images/premios/premio1.webp" type="image/webp">
+                        <img src="images/premios/premio1.jpeg" alt="Hack & Disrupt! 2022 - Primer Premio"
+                            class="project-img">
+                    </picture>
+                    <!-- <img src="images/premios/premio1.jpeg" alt="Hack & Disrupt! 2022 - Primer Premio" -->
+                    class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">🥇 Hack & Disrupt! 2022</h3>
+                        <p class="project-description">
+                            Primer premio en el hackathon internacional de fintech e insurtech organizado por BME y BBF
+                            Fintech en Bilbao.
+                            El evento se centró en resolver retos sobre finanzas sostenibles y se celebró en la Bolsa de
+                            Bilbao y en la
+                            sede de BBF, Bilbao Berrikuntza Faktoria.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Fintech</span>
+                            <span class="project-tag">Insurtech</span>
+                            <span class="project-tag">Finanzas Sostenibles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Voluntariado -->
+    <section class="section" id="volunteer">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Voluntariado</h2>
+            </div>
+            <div class="projects-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Voluntariado 1 -->
+                <div class="project-card reveal">
+                    <div class="project-content" style="height: 100%;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 class="project-title">Monitor de grupo eskaut</h3>
+                            <span class="project-tag" style="margin: 0;">2021 - 2022</span>
+                        </div>
+                        <h4 style="color: var(--primary-color); font-size: 1.2rem; margin-bottom: 1rem;">
+                            Jatorrak Eskaut Taldea
+                        </h4>
+                        <p class="project-description">
+                            Acompañé y guié a niños y jóvenes en el marco del escultismo, organizando actividades
+                            educativas, de ocio y de desarrollo personal, fomentando el trabajo en equipo, la
+                            responsabilidad y el compromiso social.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Trabajo en Equipo</span>
+                            <span class="project-tag">Educación en Valores</span>
+                            <span class="project-tag">Acompañamiento Juvenil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voluntariado 2 -->
+                <div class="project-card reveal">
+                    <div class="project-content" style="height: 100%;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 class="project-title">Monitor en colonias de verano</h3>
+                            <span class="project-tag" style="margin: 0;">Julio 2021</span>
+                        </div>
+                        <h4 style="color: var(--primary-color); font-size: 1.2rem; margin-bottom: 1rem;">
+                            Cáritas Española
+                        </h4>
+                        <p class="project-description">
+                            Colaboré en la organización y dinamización de colonias de verano dirigidas a niños en
+                            situación de vulnerabilidad, ofreciendo actividades educativas, recreativas y de integración
+                            social.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Educación</span>
+                            <span class="project-tag">Inclusión Social</span>
+                            <span class="project-tag">Desarrollo Infantil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección de Contacto -->
     <section class="section section-dark" id="contact">
         <div class="container">
@@ -1646,6 +1786,8 @@
                     <a href="#projects">Proyectos</a>
                     <a href="#experience">Experiencia</a>
                     <a href="#education">Educación</a>
+                    <a href="#awards">Premios</a>
+                    <a href="#volunteer">Voluntariado</a>
                     <a href="#contact">Contacto</a>
                 </div>
                 <p class="copyright">
