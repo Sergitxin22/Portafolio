@@ -1132,10 +1132,11 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1264px) {
             .burger {
                 display: block;
-                z-index: 1001;
+                z-index: 10090000;
+                position: relative;
             }
 
             .nav-links {
@@ -1160,6 +1161,7 @@
 
             .burger.active div:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 5px);
+                background-color: white;
             }
 
             .burger.active div:nth-child(2) {
@@ -1168,6 +1170,11 @@
 
             .burger.active div:nth-child(3) {
                 transform: rotate(-45deg) translate(5px, -5px);
+                background-color: white;
+            }
+
+            .burger div {
+                background-color: white !important;
             }
 
             .hero-title {
