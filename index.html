@@ -235,7 +235,7 @@
         .hero-title span::after {
             content: "|";
             position: absolute;
-            right: -15px;
+            right: -25px;
             color: var(--secondary-color);
             animation: blink 1s infinite;
         }
@@ -1105,10 +1105,21 @@
         }
 
         /* Soporte para media queries */
+        @media (max-width: 1264px) {
+            .hero-title span::after {
+                right: -15px;
+            }
+
+        }
+
         @media (max-width: 1024px) {
             .hero-title {
                 font-size: 3.5rem;
             }
+
+            /* .hero-title span::after {
+                right: -15px;
+            } */
 
             .hero-grid {
                 grid-template-columns: 1fr;
