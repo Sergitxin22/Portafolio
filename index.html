@@ -147,6 +147,20 @@
             transform-origin: left;
         }
 
+        /* Selector de idioma discreto */
+        .nav-links a.lang-switch {
+            font-size: 0.95rem;
+            font-weight: 400;
+            opacity: 0.75;
+            margin-left: 1rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-links a.lang-switch::after {
+            display: none;
+        }
+
         .burger {
             display: none;
             cursor: pointer;
@@ -1166,6 +1180,15 @@
                 box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
             }
 
+            /* Selector de idioma en el menú móvil */
+            .nav-links a.lang-switch {
+                border-left: none;
+                margin: 1rem 0 0;
+                padding: 0;
+                font-size: 1rem;
+                opacity: 0.75;
+            }
+
             .nav-links.active {
                 right: 0;
             }
@@ -1362,6 +1385,7 @@
                         <a href="#awards">Premios</a>
                         <a href="#volunteer">Voluntariado</a>
                         <a href="#contact">Contacto</a>
+                        <a href="/en/" lang="en" class="lang-switch">EN</a>
                     </div>
                     <div class="burger" id="burger">
                         <div></div>
